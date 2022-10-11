@@ -1,0 +1,19 @@
+{
+  "name": "nebulagraphwriter",
+  "parameter": {
+    "username": "root",
+    "password": "nebula",
+    "column": [
+      ""
+    ],
+    "connection": [
+      {
+        "table": [
+          ""
+        ],
+        "jdbcUrl": ""
+      }
+    ],
+    "batchSize": 1000
+  }
+}
