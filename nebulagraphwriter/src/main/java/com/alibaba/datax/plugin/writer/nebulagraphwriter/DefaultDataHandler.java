@@ -168,6 +168,9 @@ public class DefaultDataHandler implements DataHandler {
                         .append(" values ");
         // VID未指定
         // 拼接values部分
+        // VID由于要求是整个图空间中唯一 并且其并非是节点的标签 其属于独立于标签属性的唯一标识属性
+        // 因此我们采取table+主键的形式生成VID 如有需求则需要在配置文件中指定VID的长度 也就是FIXED_STRING(N)
+        // 中N的大小
         for (Record record : recordBuffer) {
             sb.append("(");
             for (int i = 0; i < colMetas.size(); i++) {
