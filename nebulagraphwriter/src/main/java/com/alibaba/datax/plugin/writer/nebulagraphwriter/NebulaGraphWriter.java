@@ -85,13 +85,15 @@ public class NebulaGraphWriter extends Writer {
         }
 
         @Override
-        public void startWrite(RecordReceiver lineReceiver) {
+        public void startWrite(RecordReceiver recordReceiver) {
             String peerPluginName = this.writerSliceConfig.getString(PEER_PLUGIN_NAME);
             LOG.debug("Start to handle record from: " + peerPluginName);
 
             // 业务逻辑: DataHandler
+            DataHandler handler = new DefaultDataHandler(this.writerSliceConfig, this.taskPluginCollector);
 
-            LOG.debug("Finish handling data, records: ");
+            long records = handler.handle(recordReceiver, getTaskPluginCollector());
+            LOG.debug("Finish handling data, records: " + records);
         }
     }
 }
