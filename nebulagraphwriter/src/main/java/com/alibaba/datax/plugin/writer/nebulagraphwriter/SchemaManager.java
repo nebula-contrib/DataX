@@ -107,7 +107,7 @@ public class SchemaManager {
         tableMeta.name = name;
 
         if (LOG.isDebugEnabled()){
-            LOG.debug("load tag metadata of " + tableMeta.name + ": " + tableMeta);
+            LOG.debug("Load tag metadata of " + tableMeta.name + ": " + tableMeta);
         }
         return tableMeta;
     }
@@ -120,7 +120,7 @@ public class SchemaManager {
         tableMeta.name = name;
 
         if (LOG.isDebugEnabled()){
-            LOG.debug("load edgeType metadata of " + tableMeta.name + ": " + tableMeta);
+            LOG.debug("Load edgeType metadata of " + tableMeta.name + ": " + tableMeta);
         }
         return tableMeta;
     }

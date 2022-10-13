@@ -24,10 +24,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class DefaultDataHandler implements DataHandler {
@@ -264,9 +261,22 @@ public class DefaultDataHandler implements DataHandler {
         Column column = record.getColumn(indexOf(colMeta.field));
         Column.Type type = column.getType();
         switch (type) {
+            // 待定
             case DATE:
+                String val = column.asString();
+                if (colMeta.type.equals("date")) {
+                    return "date(" + "\"" + val + "\"" + ")";
+                } else if (colMeta.type.equals("time")) {
+                    return "time(" + "\"" + val + "\"" + ")";
+                } else if (colMeta.type.equals("datetime")) {
+                    return "datetime(" + "\"" + val + "\"" + ")";
+                } else {
+                    return "\"" + val + "\"";
+                }
             case BYTES:
             case STRING:
+                String value = column.asString();
+                return "\"" + value + "\"";
             case NULL:
             case BAD:
                 return "NULL";
