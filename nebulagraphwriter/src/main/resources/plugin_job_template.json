@@ -11,7 +11,15 @@
         "table": [
           ""
         ],
-        "jdbcUrl": ""
+        "edgeType": [
+          {
+            "srcTag": "",
+            "srcPrimaryKey": "",
+            "dstTag": "",
+            "dstPrimaryKey": ""
+          }
+        ],
+        "jdbcUrl": "jdbc://nebula:<space_name>"
       }
     ],
     "batchSize": 1000
