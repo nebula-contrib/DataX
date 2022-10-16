@@ -8,4 +8,6 @@ public class Key {
     public static final String TABLE = "table";
     public static final String BATCH_SIZE = "batchSize";
     public static final String COLUMN = "column";
+
+    public static final String EDGE_TYPE = "edgeType";
 }
