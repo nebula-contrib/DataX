@@ -48,6 +48,7 @@
 
         <!-- reader -->
         <module>mysqlreader</module>
+        <!--
         <module>drdsreader</module>
         <module>sqlserverreader</module>
         <module>postgresqlreader</module>
@@ -68,9 +69,9 @@
         <module>ossreader</module>
         <module>hdfsreader</module>
         <module>ftpreader</module>
-        <module>txtfilereader</module>
+        <module>txtfilereader</module> -->
         <module>streamreader</module>
-
+        <!--
         <module>mongodbreader</module>
         <module>tdenginereader</module>
         <module>gdbreader</module>
@@ -79,8 +80,9 @@
         <module>loghubreader</module>
         <module>datahubreader</module>
         <module>starrocksreader</module>
-
+        -->
         <!-- writer -->
+        <!--
         <module>mysqlwriter</module>
         <module>starrockswriter</module>
         <module>drdswriter</module>
@@ -119,12 +121,16 @@
         <module>datahubwriter</module>
         <module>cassandrawriter</module>
         <module>clickhousewriter</module>
-        <module>doriswriter</module>
+        -->
+        <module>nebulagraphwriter</module>
+        <!--
+        <module>doriswriter</module> -->
+
 
         <!-- common support module -->
         <module>plugin-rdbms-util</module>
         <module>plugin-unstructured-storage-util</module>
-       
+
     </modules>
 
     <dependencyManagement>
