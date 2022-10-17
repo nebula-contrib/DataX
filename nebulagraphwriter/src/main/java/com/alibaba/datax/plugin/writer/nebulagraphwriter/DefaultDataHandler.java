@@ -7,6 +7,7 @@ import com.alibaba.datax.common.plugin.RecordReceiver;
 import com.alibaba.datax.common.plugin.TaskPluginCollector;
 import com.alibaba.datax.common.util.Configuration;
 import com.alibaba.fastjson.JSONObject;
+import com.vesoft.nebula.jdbc.impl.NebulaDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -62,7 +63,6 @@ public class DefaultDataHandler implements DataHandler {
     // 数据库驱动加载常用方法 利用静态方法加载数据库驱动类
     static {
         try {
-            // 暂时未导入到pom.xml中
             Class.forName("com.vesoft.nebula.jdbc.NebulaDriver");
         } catch (ClassNotFoundException ignored) {
 
@@ -85,6 +85,7 @@ public class DefaultDataHandler implements DataHandler {
         int count = 0, affectedRows = 0;
 
         try {
+            NebulaDriver defaultDriver = new NebulaDriver();
             Connection conn = DriverManager.getConnection(jdbcUrl, username, password);
             Session session = getSession();
             LOG.info("Connection[ jdbcUrl: " + jdbcUrl + ", username: " + username

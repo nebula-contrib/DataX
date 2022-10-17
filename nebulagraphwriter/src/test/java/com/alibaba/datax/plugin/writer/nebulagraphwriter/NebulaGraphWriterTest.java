@@ -18,7 +18,14 @@ public class NebulaGraphWriterTest {
                 "\"username\": \"root\"," +
                 "\"password\": \"nebula\"," +
                 "\"column\": [\"name\", \"age\"]," +
-                "\"connection\": [{\"table\":[\"player\"],\"jdbcUrl\":\"jdbc:nebula://cba\"}]," +
+                "\"connection\": [" +
+                                    "{" +
+                                        "\"table\":[\"player\"]," +
+                                        "\"edgeType\": [{\"srcTag\":\"player\",\"srcPrimaryKey\":\"srcPlayerName\"," +
+                                                        "\"dstTag\":\"player\",\"dstPrimaryKey\":\"dstPlayerName\"}]," +
+                                        "\"jdbcUrl\":\"jdbc:nebula://cba\"" +
+                                    "}" +
+                                "]," +
                 "\"batchSize\": \"1000\"" +
                 "}");
         job.setPluginJobConf(configuration);

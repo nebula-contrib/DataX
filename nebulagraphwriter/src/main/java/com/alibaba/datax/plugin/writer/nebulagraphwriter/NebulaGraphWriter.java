@@ -59,8 +59,8 @@ public class NebulaGraphWriter extends Writer {
                 // 此步骤主要是为了去掉json中table和jdbc外部的connection字段
                 // 便于后续可以直接通过Key来访问json字符串
                 cloneConfig.set(Key.JDBC_URL, conf.getString(Key.JDBC_URL));
-                cloneConfig.set(Key.TABLE, conf.getString(Key.TABLE));
-                cloneConfig.set(Key.EDGE_TYPE, conf.getString(Key.EDGE_TYPE));
+                cloneConfig.set(Key.TABLE, conf.getList(Key.TABLE));
+                cloneConfig.set(Key.EDGE_TYPE, conf.getList(Key.EDGE_TYPE));
                 cloneConfig.remove(Key.CONNECTION);
                 writerSplitConfig.add(cloneConfig);
             }

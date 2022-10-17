@@ -6,7 +6,6 @@ import com.alibaba.datax.common.element.StringColumn;
 import com.alibaba.datax.common.plugin.TaskPluginCollector;
 import com.alibaba.datax.common.util.Configuration;
 import com.alibaba.datax.core.transport.record.DefaultRecord;
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.vesoft.nebula.client.graph.NebulaPoolConfig;
 import com.vesoft.nebula.client.graph.data.HostAddress;
@@ -24,11 +23,9 @@ import org.junit.Test;
 
 import java.net.UnknownHostException;
 import java.sql.Connection;
-import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -79,10 +76,12 @@ public class DefaultDataHandlerTest {
                 "\"password\": \"nebula\"," +
                 "\"column\": [\"name\", \"age\"]," +
                 "\"table\":[\"player\"]," +
+                "\"edgeType\": [{\"srcTag\":\"player\",\"srcPrimaryKey\":\"srcPlayerName\"," +
+                                "\"dstTag\":\"player\",\"dstPrimaryKey\":\"dstPlayerName\"}]," +
                 "\"jdbcUrl\":\"jdbc:nebula://cba\"," +
                 "\"batchSize\": \"1000\"" +
                 "}");
-        List<Record> recordList = IntStream.range(1,11).mapToObj(i -> {
+        List<Record> recordList = IntStream.range(11,21).mapToObj(i -> {
             Record record = new DefaultRecord();
             record.addColumn(new StringColumn("member_" + i));
             record.addColumn(new LongColumn(18 + i));
@@ -115,11 +114,11 @@ public class DefaultDataHandlerTest {
                 "\"column\": [\"srcPlayerName\", \"dstPlayerName\", \"degree\"]," +
                 "\"table\":[\"follow\"]," +
                 "\"edgeType\": [{\"srcTag\":\"player\",\"srcPrimaryKey\":\"srcPlayerName\"," +
-                "\"dstTag\":\"player\",\"dstPrimaryKey\":\"dstPlayerName\"}]," +
+                                "\"dstTag\":\"player\",\"dstPrimaryKey\":\"dstPlayerName\"}]," +
                 "\"jdbcUrl\":\"jdbc:nebula://cba\"," +
                 "\"batchSize\": \"1000\"" +
                 "}");
-        List<Record> recordList = IntStream.range(1,11).mapToObj(i -> {
+        List<Record> recordList = IntStream.range(11,21).mapToObj(i -> {
             Record record = new DefaultRecord();
             record.addColumn(new StringColumn("member_" + 1));
             record.addColumn(new StringColumn("member_" + i));
