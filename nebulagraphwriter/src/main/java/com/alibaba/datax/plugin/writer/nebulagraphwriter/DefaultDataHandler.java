@@ -189,11 +189,11 @@ public class DefaultDataHandler implements DataHandler {
         // 利用StringBuilder拼接insert语句
         StringBuilder sb = new StringBuilder();
         // 拼接sb生成insert nGql语句 (字段部分)
-        sb.append("insert vertex ").append(table).append(" ")
+        sb.append("INSERT VERTEX ").append(table).append(" ")
                 .append(colMetas.stream().filter(colMeta -> columns.contains(colMeta.field))
                         .map(colMeta -> {return colMeta.field;})
                         .collect(Collectors.joining(",","(",")")))
-                        .append(" values ");
+                        .append(" VALUES ");
 
         // 拼接values部分
         // insert vertex player(name, age) values "player100":("Lim Kee", 23)
@@ -230,11 +230,11 @@ public class DefaultDataHandler implements DataHandler {
         StringBuilder sb = new StringBuilder();
         // 起始id 终点id 以及rank 查一下nebula中如何写的这部分insert语句 源数据库端需要遵守约定
         // 拼接sb生成insert nGql语句 (字段部分)
-        sb.append("insert edge ").append(table).append(" ")
+        sb.append("INSERT EDGE ").append(table).append(" ")
                 .append(colMetas.stream().filter(colMeta -> columns.contains(colMeta.field))
                         .map(colMeta -> {return colMeta.field;})
                         .collect(Collectors.joining(",","(",")")))
-                .append(" values ");
+                .append(" VALUES ");
 
         // values 部分
         // insert边语句格式:
