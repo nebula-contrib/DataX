@@ -3,11 +3,12 @@ package com.alibaba.datax.plugin.reader.nebulagraphreader;
 import com.alibaba.datax.common.element.*;
 import com.alibaba.datax.common.util.Configuration;
 import com.alibaba.datax.core.transport.record.DefaultRecord;
+
 import com.vesoft.nebula.client.graph.data.DateWrapper;
 import com.vesoft.nebula.client.graph.data.ValueWrapper;
 import com.vesoft.nebula.client.graph.exception.InvalidValueException;
 import com.vesoft.nebula.jdbc.impl.NebulaDriver;
-import jdk.nashorn.internal.runtime.regexp.joni.Config;
+
 import org.apache.commons.lang.StringUtils;
 import org.junit.AfterClass;
 import org.junit.Assert;
