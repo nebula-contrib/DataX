@@ -154,7 +154,7 @@ DataX中的数据类型与NebulaGraph中数据类型的映射转换关系
 
 | 数据迁移示例       | 配置的示例                                                   |
 | ------------------ | ------------------------------------------------------------ |
-| MySQL到NebulaGraph | [关系型数据库MySQL到NebulaGraph 点表->标签](../src/test/resources/mysql2nebula.json) |
+| MySQL到NebulaGraph | [关系型数据库MySQL到NebulaGraph 点表->标签](../src/test/resources/n2mysql.json) |
 | 待补充             |                                                              |
 
 ## 4. 性能报告
