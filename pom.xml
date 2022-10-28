@@ -71,6 +71,7 @@
         <module>ftpreader</module>
         <module>txtfilereader</module> -->
         <module>streamreader</module>
+        <module>nebulagraphreader</module>
         <!--
         <module>mongodbreader</module>
         <module>tdenginereader</module>
@@ -82,8 +83,9 @@
         <module>starrocksreader</module>
         -->
         <!-- writer -->
-        <!--
+
         <module>mysqlwriter</module>
+        <!--
         <module>starrockswriter</module>
         <module>drdswriter</module>
         <module>oraclewriter</module>
@@ -107,9 +109,9 @@
         <module>kuduwriter</module>
         <module>ftpwriter</module>
         <module>hdfswriter</module>
-        <module>txtfilewriter</module>
+        <module>txtfilewriter</module> -->
         <module>streamwriter</module>
-
+        <!--
         <module>elasticsearchwriter</module>
         <module>mongodbwriter</module>
         <module>tdenginewriter</module>
